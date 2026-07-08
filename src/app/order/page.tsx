@@ -169,7 +169,7 @@ export default function OrderPage() {
             )}
           </div>
 
-          <Field label="References (optional, up to 6 images)" error={uploadError ?? undefined}>
+          <Field label="References (coming soon !!! )" error={uploadError ?? undefined}>
             <label className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-white/15 bg-bg-card p-8 text-sm text-zinc-400 hover:border-accent/50">
               {uploading ? (
                 <Loader2 className="h-6 w-6 animate-spin text-accent" />
