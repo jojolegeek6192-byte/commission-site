@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  color: #f4f4f5;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.glass {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle grayscale text treatment — no color, just a soft white-to-gray fade
+   for large headlines, keeping the 100% black & white constraint. */
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+/* Minimal scrollbar for a premium feel */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #262626; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #525252; }
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-bg-card px-4 py-3 text-sm text-white placeholder:text-zinc-600 outline-none transition focus:border-white/40 focus:ring-1 focus:ring-white/20;
+  }
+}
